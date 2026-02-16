@@ -1,0 +1,7 @@
+- name: roboshop role
+  hosts: localhost
+  connection: local
+  roles:
+  - roboshop
+
+  
