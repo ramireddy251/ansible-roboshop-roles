@@ -1,0 +1,20 @@
+- name: app_setup
+  ansible.builtin.import_role:
+    name: common
+    tasks_from: app-setup.yml
+
+- name: jodejs_setup
+  ansible.builtin.import_role:
+    name: common
+    tasks_from: nodejs-setup.yml
+
+- name: systemd_setup
+  ansible.builtin.import_role:
+    name: common
+    tasks_from: systemd-setup.yml
+    
+- name: start user
+  ansible.builtin.service:
+    name: user
+    state: restarted
+    enabled: yes            
