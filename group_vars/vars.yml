@@ -1,5 +1,7 @@
 ansible_user: ec2-user
 ansible_password: DevOps321
+ansible_connection: ssh
+ansible_ssh_common_args: '-o PreferredAuthentications=password -o PubkeyAuthentication=no'
 MONGODB_HOST: mongodb.ramireddy.co.in
 CATALOGUE_HOST: catalogue.ramireddy.co.in
 REDIS_HOST: redis.ramireddy.co.in
