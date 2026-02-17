@@ -13,25 +13,6 @@
     name: common
     tasks_from: systemd-setup.yml
 
-- name: install dependencies
-  ansible.builtin.command: mvn clean package
-  args:
-    chdir: /app  
-
-- name: rename package
-  ansible.builtin.command: mv target/shipping-1.0.jar shipping.jar 
-  args:
-    chdir: /app    
-
-- name: Creating systemctl service
-  ansible.builtin.template:
-    src: shipping.service.j2
-    dest: /etc/systemd/system/shipping.service  
-    
-- name: daemon reload
-  ansible.builtin.systemd_service:
-    daemon_reload: true
-
 - name: install python dependencies
   ansible.builtin.pip:
     name: "{{ item }}"

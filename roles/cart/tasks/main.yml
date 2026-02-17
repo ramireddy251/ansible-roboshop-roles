@@ -3,7 +3,7 @@
     name: common
     tasks_from: app-setup.yml
 
-- name: jodejs_setup
+- name: nodejs_setup
   ansible.builtin.import_role:
     name: common
     tasks_from: nodejs-setup.yml
