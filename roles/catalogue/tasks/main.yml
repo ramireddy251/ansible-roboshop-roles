@@ -36,7 +36,8 @@
   when: catalogue_output.stdout | int < 0
   
 - name: start catalogue
-  ansible.builtin.service:
+  ansible.builtin.systemd:
     name: catalogue
     state: restarted
-    enabled: yes            
+    enabled: yes
+    masked: no            
