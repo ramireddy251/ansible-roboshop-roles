@@ -1,8 +1,4 @@
 - name: copy {{ component }} service
   ansible.builtin.template:
     src: "{{ component }}.service.j2"
-    dest: "/etc/systemd/system/{{ component }}.service"
-
-- name: daemon reload
-  ansible.builtin.systemd:
-    daemon_reload: true    
+    dest: "/etc/systemd/system/{{ component }}.service" 
